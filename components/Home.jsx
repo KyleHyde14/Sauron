@@ -1,21 +1,14 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar'
+import { Link } from 'expo-router';
 
 export default function Home() {
     return (
     <View style={styles.container}>
         <Text style={styles.title}>One Login to Rule Them All</Text>
-        <Pressable
-            title="Signup"
-            onPress={() => navigation.navigate('Signup')}
-            style={styles.pressable}
-        ><Text style={styles.buttonLabel}>Sing Up</Text></Pressable>
-        <Pressable
-            title="Login"
-            onPress={() => navigation.navigate('Login')}
-            style={styles.pressable}
-        ><Text style={styles.buttonLabel}>Login</Text></Pressable>
+        <Link href='/login' style={styles.pressable}>Login</Link>
+        <Link href='/register' style={styles.pressable}>Sing up</Link>
         <StatusBar style="light" />
     </View>)
 
@@ -35,6 +28,11 @@ const styles = StyleSheet.create({
     },
     pressable: {
       width: '80%',
+      color: '#ffA500',
+      textAlign: 'center',
+      textAlignVertical: 'center',
+      fontSize: 20,
+      fontWeight: 'bold',
       height: 50,
       backgroundColor: 'rgba(139, 0, 0, .3)',
       borderRadius: 15,

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
 
-export default function loginScreen() {
+export default function registerScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
+    const handleRegister = () => {
         // Handle login logic here
         console.log('Email:', email);
         console.log('Password:', password);
@@ -13,7 +13,7 @@ export default function loginScreen() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>You remember it, right?</Text>
+            <Text style={styles.title}>Register now</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -25,14 +25,14 @@ export default function loginScreen() {
             />
             <TextInput
                 style={styles.input}
-                placeholder="YOUR Password"
+                placeholder="Set a new Password"
                 placeholderTextColor={'rgba(255, 165, 0, .5)'}
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
             />
-            <Pressable onPress={handleLogin} style={styles.login_button}>
-                <Text style={styles.button_label} >login</Text>
+            <Pressable onPress={handleRegister} style={styles.login_button}>
+                <Text style={styles.button_label} >Register</Text>
             </Pressable>
             
         </View>
